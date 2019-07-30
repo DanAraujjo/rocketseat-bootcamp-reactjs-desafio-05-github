@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
-import { Container, Form, SubmitButton } from './styles';
+import { Container, Form, SubmitButton, List } from './styles';
 
 import api from '../../services/api';
 
 export default class Main extends Component {
   state = {
     newRepo: '',
-    repository: [],
+    repositories: [],
     loading: false,
   };
 
@@ -21,7 +21,7 @@ export default class Main extends Component {
 
     this.setState({ loading: true });
 
-    const { newRepo, repository } = this.state;
+    const { newRepo, repositories } = this.state;
 
     const response = await api.get(`/repos/${newRepo}`);
 
@@ -30,14 +30,14 @@ export default class Main extends Component {
     };
 
     this.setState({
-      repository: [...repository, data],
+      repositories: [...repositories, data],
       newRepo: '',
       loading: false,
     });
   };
 
   render() {
-    const { newRepo, loading } = this.state;
+    const { newRepo, repositories, loading } = this.state;
 
     return (
       <Container>
@@ -62,6 +62,15 @@ export default class Main extends Component {
             )}
           </SubmitButton>
         </Form>
+
+        <List>
+          {repositories.map(repository => (
+            <li key={repository.name}>
+              <span>{repository.name}</span>
+              <a href="#">Detalhes</a>
+            </li>
+          ))}
+        </List>
       </Container>
     );
   }
