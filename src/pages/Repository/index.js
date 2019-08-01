@@ -5,7 +5,7 @@ import api from '../../services/api';
 
 import Container from '../../components/Container';
 import { Loading, Owner, IssueList, IssueFilter, PageActions } from './styles';
-
+import { FaArrowLeft } from 'react-icons/fa';
 export default class Repository extends Component {
   static propTypes = {
     match: PropTypes.shape({
@@ -98,7 +98,10 @@ export default class Repository extends Component {
     return (
       <Container>
         <Owner>
-          <Link to="/">Voltar</Link>
+          <Link to="/">
+            <FaArrowLeft />
+            Voltar
+          </Link>
           <img src={repository.owner.avatar_url} alt={repository.owner.login} />
           <h1>{repository.name}</h1>
           <p>{repository.description}</p>

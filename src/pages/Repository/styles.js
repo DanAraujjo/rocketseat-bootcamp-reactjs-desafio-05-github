@@ -16,6 +16,9 @@ export const Owner = styled.header`
   align-items: center;
 
   a {
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
     color: #7159c1;
     font-size: 16px;
     text-decoration: none;

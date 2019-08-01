@@ -57,6 +57,7 @@ export const SubmitButton = styled.button.attrs(props => ({
 export const List = styled.ul`
   list-style: none;
   margin-top: 30px;
+  font-size: 16px;
 
   li {
     padding: 15px 0;
@@ -70,8 +71,37 @@ export const List = styled.ul`
     }
 
     a {
-      color: #7159c1;
       text-decoration: none;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: #7159c1;
+      }
+    }
+
+    img {
+      margin-right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #eee;
+    }
+
+    button {
+      color: #999;
+      background: none;
+      border: 0;
+      padding: 6px 0 6px 16px;
+      &:hover {
+        color: #7159c1;
+      }
     }
   }
+`;
+
+export const ErrorMessage = styled.span`
+  display: block;
+  margin-top: 5px;
+  color: #e41111;
 `;
