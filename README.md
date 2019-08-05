@@ -71,7 +71,7 @@ module.exports = {
   plugins: ["react", "prettier"],
   rules: {
     "prettier/prettier": "error",
-    "react/jsx-filename-extension": ["warn", { extension: [".jsx", ".js"] }],
+    "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".js"] }],
     "import/prefer-default-export": "off"
   }
 };
@@ -86,7 +86,7 @@ Crie o arquivo **.prettierrc**
 }
 ```
 
-##Criando rotas
+## Criando rotas
 
 Execute o comando
 
@@ -156,7 +156,7 @@ function App() {
 export default App;
 ```
 
-##Styled Components
+## Styled Components
 
 > Instale a extensão do VSCode : vscode-styled-components
 
