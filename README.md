@@ -17,7 +17,7 @@ Exclua os arquivos:
 
 Remova as referencia desses arquivos
 
-##ESLint, Prettier & EditorConfig
+## ESLint, Prettier & EditorConfig
 Crie o arquivo **.editorconfig**
 
 ```
